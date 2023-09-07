@@ -1,0 +1,155 @@
+﻿@{
+    var FirstName = "Lloyd";
+    var LastName = "Pogi";
+    DateTime Birthday = DateTime.Parse("31/1/2002");
+    bool IsTenured = true;
+    bool IsTenured1 = false;
+    string IsTenuredTF = "";
+    string IsTenuredTF1 = "";
+    int SalaryPerHour = 100;
+    int SalaryPerHour1 = 100;
+    var Email = "lloydpogi@ust.edu.ph";
+
+    string[] splitEmail = Email.Split(new char[] { '@' });
+    string emailUser = splitEmail[0];
+    string emailDomain = splitEmail[1];
+
+    int SalaryPerDay = SalaryPerHour * 13;
+    int SalaryPerMonth = SalaryPerDay * 50;
+
+    int SalaryPerDay1 = SalaryPerHour1 * 8;
+    int SalaryPerMonth1 = SalaryPerDay1 * 30;
+    int age = DateTime.Now.Subtract(Birthday).Days / 365;
+
+
+
+
+
+    if (IsTenured == true)
+    {
+        IsTenuredTF = "Permanent";
+        SalaryPerMonth = SalaryPerMonth + 500;
+    }
+    else
+    {
+        IsTenuredTF = "Probationary";
+    }
+
+
+    if (IsTenured1 == true)
+    {
+        IsTenuredTF1 = "Permanent";
+        SalaryPerMonth1 = SalaryPerMonth1 + 500;
+    }
+    else
+    {
+        IsTenuredTF1 = "Probationary";
+    }
+
+
+
+
+}
+
+<p> I'm @FirstName @LastName and I'm @age years old. </p>
+
+<br />
+<p> Email: @Email </p>
+<p> User: @emailUser </p>
+<p> Domain: @emailDomain </p>
+
+<style>
+div1{
+            float: left;
+            padding: 25px;
+            
+        }
+    </style>
+<div1>
+    <p> Name: Lloyd Panget</p>
+    <p> Email: lloydpanget@ust.edu.ph</p>
+    <p> Status: @IsTenuredTF</p>
+    <p> Daily: @SalaryPerDay</p>
+    <p> Monthly Salary: @SalaryPerMonth </p>
+    </div1>
+
+<div1>
+    <p> Name: Lloyd Pogi  </p>
+    <p> Email: lloydpogi@ust.edu.ph</p>
+    <p> Status: @IsTenuredTF1 </p>
+    <p> Daily: @SalaryPerDay1  </p>
+    <p> Monthly Salary: @SalaryPerMonth1 </p>
+</div1>
+   
+@{
+    var Name = "Lloyd Pogi";
+    int PrelimGrade = 98;
+    int FinalGrade = 99;
+    int SemGrade = (PrelimGrade + FinalGrade) / 2;
+    var TransGrade = 0.00;
+
+    if (SemGrade >= 96)
+    {
+        TransGrade = 1.00;
+    }
+    else if (SemGrade >= 94 && SemGrade < 96)
+    {
+        TransGrade = 1.25;
+    }
+    else if (SemGrade >= 92 && SemGrade < 94)
+    {
+        TransGrade = 1.50;
+    }
+    else if (SemGrade >= 89 && SemGrade < 92)
+    {
+        TransGrade = 1.75;
+    }
+    else if (SemGrade >= 87 && SemGrade < 89)
+    {
+        TransGrade = 2.00;
+    }
+    else if (SemGrade >= 84 && SemGrade < 87)
+    {
+        TransGrade = 2.25;
+    }
+    else if (SemGrade >= 82 && SemGrade < 84)
+    {
+        TransGrade = 2.50;
+    }
+    else if (SemGrade >= 79 && SemGrade < 82)
+    {
+        TransGrade = 2.75;
+    }
+    else if (SemGrade >= 75 && SemGrade < 79)
+    {
+        TransGrade = 3.00;
+    }
+    else if (SemGrade < 75)
+    {
+        TransGrade = 5.00;
+    }
+
+}
+<table class="table table-dark">
+    <tr>
+        <td>Name: </td>
+        <td>@Name</td>
+    </tr>
+    <tr>
+        <td>Prelim</td>
+        <td>@PrelimGrade</td>
+    </tr>
+    <tr>
+        <td>Final</td>
+        <td>@FinalGrade</td>
+    </tr>
+    <tr>
+        <td>Semestral Grade</td>
+        <td>@SemGrade</td>
+    </tr>
+    <tr>
+        <td>Transmuted Grade</td>
+        <td>@TransGrade</td>
+    </tr>
+
+</table>
